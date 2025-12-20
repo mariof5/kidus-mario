@@ -1,0 +1,96 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  margin-top: 100px;
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark mode support */
+[data-theme="dark"] .wrapper {
+  background-color: #0a0a0a;
+}
+
+.iframeContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  background: transparent;
+}
+
+[data-theme="dark"] .iframe {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  background: #1a1a1a;
+}
+
+/* Ensure iframe background matches dark mode */
+[data-theme="dark"] .iframe {
+  background-color: #1a1a1a;
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+  .iframeContainer {
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .wrapper {
+    height: 100vh;
+    min-height: 600px;
+  }
+  
+  .iframeContainer {
+    padding: 1rem;
+  }
+  
+  .iframe {
+    border-radius: 8px;
+  }
+}
+
+/* Small mobile responsive */
+@media (max-width: 480px) {
+  .iframeContainer {
+    padding: 0.75rem;
+  }
+  
+  .iframe {
+    border-radius: 6px;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 380px) {
+  .wrapper{
+        margin-top: -300px;
+  }
+  .iframeContainer {
+    
+    padding: 0.5rem;
+  }
+}
+
+/* Landscape orientation support */
+@media (max-height: 600px) and (orientation: landscape) {
+  .wrapper {
+    height: auto;
+    min-height: 100vh;
+  }
+}

@@ -1,0 +1,304 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--bg-primary, #ffffff);
+  border: 1px solid var(--border-primary, #e5e7eb);
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem 3.5rem;
+  margin-bottom: 100px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.availabilityBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid var(--badge-border, rgba(181, 255, 109, 0.2));
+}
+
+.badgeDot {
+  position: relative;
+  display: flex;
+  height: 6px;
+  width: 6px;
+}
+
+.dotPulse {
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: var(--highlight-primary, #10b981);
+  border-radius: 9999px;
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  opacity: 0.75;
+}
+
+.dot {
+  position: relative;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: var(--highlight-primary, #10b981);
+  border-radius: 9999px;
+}
+
+.availabilityText {
+  color: var(--text-primary, #1f2937);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  padding-top: 16px;
+    padding-left: 1px;
+}
+
+.heading {
+  margin: 0 auto 2rem;
+  max-width: var(--breakpoint-sm, 640px);
+  text-align: center;
+  text-wrap: balance;
+  color: var(--text-primary, #1f2937);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.word {
+  margin-right: 0.25em;
+  display: inline-block;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.letter {
+  display: inline-block;
+  opacity: 1;
+  transform: none;
+  transition: transform 0.2s ease;
+}
+
+.letter:hover {
+  transform: translateY(-2px);
+}
+
+.contactButton {
+  border: 1.5px solid var(--button-border, #1f2937);
+  border-radius: 24px;
+  padding: 12px 32px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25rem;
+  position: relative;
+  background: transparent;
+  color: var(--button-text, #1f2937);
+  display: block;
+  margin: 0 auto;
+}
+
+.contactButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--button-shadow, rgba(0, 0, 0, 0.15));
+}
+
+.contactButton:focus-visible {
+  outline: 2px solid var(--highlight-primary, #10b981);
+  outline-offset: 2px;
+}
+
+.contactButton:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.buttonRipple {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  background: var(--button-ripple, #1f2937);
+  border-radius: 100% 100% 0px 0px;
+  transition: top 0.5s cubic-bezier(0.4, 0, 0, 1), border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
+  top: 101%;
+}
+
+.contactButton:hover .buttonRipple {
+  top: 0%;
+  border-radius: 0px;
+}
+
+.buttonTextContainer {
+  display: block;
+  overflow: hidden;
+}
+
+.buttonText {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+  transform: translateY(0px);
+  position: relative;
+  z-index: 1;
+}
+
+.contactButton:hover .buttonText {
+  color: var(--button-text-hover, #ffffff);
+  transform: translateY(0px);
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1.5rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+.socialIcon {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.socialIcon:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+  color: var(--highlight-primary, #10b981);
+}
+
+/* CSS Variables for Light Mode (Default) */
+.container {
+  --bg-primary: #ffffff;
+  --border-primary: #e5e7eb;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --button-border: #1f2937;
+  --button-text: #1f2937;
+  --button-ripple: #1f2937;
+  --button-text-hover: #ffffff;
+  --button-shadow: rgba(0, 0, 0, 0.15);
+  --highlight-primary: #10b981;
+  --badge-bg: rgba(16, 185, 129, 0.1);
+  --badge-border: rgba(16, 185, 129, 0.2);
+}
+
+/* Manual dark mode class support */
+.dark .container,
+[data-theme="dark"] .container {
+  --bg-primary: #111827;
+  --border-primary: #374151;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --button-border: #f9fafb;
+  --button-text: #f9fafb;
+  --button-ripple: #f9fafb;
+  --button-text-hover: #111827;
+  --button-shadow: rgba(255, 255, 255, 0.1);
+  --highlight-primary: #34d399;
+  --badge-bg: rgba(52, 211, 153, 0.1);
+  --badge-border: rgba(52, 211, 153, 0.2);
+}
+
+/* Animations */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .container {
+    padding: 1.5rem 1rem 3rem;
+    margin: 0 1rem;
+  }
+  
+  .socialLinks {
+    display: flex;
+  }
+  
+  .heading {
+    font-size: 1.5rem;
+  }
+  
+  .availabilityBadge {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .socialLinks {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 2.5rem 2rem 4rem;
+  }
+  
+  .heading {
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .container {
+    border-width: 2px;
+  }
+  
+  .contactButton {
+    border-width: 2px;
+  }
+  
+  .availabilityBadge {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .container,
+  .contactButton,
+  .socialIcon,
+  .letter {
+    transition: none;
+  }
+  
+  .dotPulse {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .contactButton:hover {
+    transform: none;
+  }
+  
+  .letter:hover {
+    transform: none;
+  }
+}
+
+/* AOS animation classes */
+.aosInit {
+  transition-property: opacity, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.aosAnimate {
+  opacity: 1;
+  transform: translateZ(0px);
+}

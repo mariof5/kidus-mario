@@ -1,0 +1,854 @@
+/* Header.module.css - Refined Glass Effect with Image Logo & Dark Mode Toggle */
+
+/* Ensure body background shines through */
+:root {
+  --glass-bg-light: rgba(255, 255, 255, 0.08);
+  --glass-bg-scrolled: rgba(255, 255, 255, 0.12);
+  --glass-border-light: rgba(255, 255, 255, 0.15);
+  --glass-border-scrolled: rgba(255, 255, 255, 0.2);
+  --glass-bg-dark: rgba(15, 15, 15, 0.3);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+}
+
+.header {
+  position: sticky;
+  top: 20px; /* Added space from top */
+  z-index: 1000;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 0px solid rgba(255, 255, 255, 0.15); /* Changed from border-bottom to border */
+  border-radius: 16px; /* Added border radius */
+  transition: all 0.4s ease;
+  height: 70px;
+  box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0);
+  margin: 0 20px; /* Added horizontal margin */
+  width: calc(100% - 40px); /* Adjust width to account for margin */
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  height: 64px;
+  top: 10px; /* Less space when scrolled */
+  margin: 0 20px;
+  width: calc(100% - 40px);
+}
+
+/* Dark theme variant */
+.header.darkTheme {
+  background: rgba(15, 15, 15, 0.3);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.header.darkTheme.scrolled {
+  background: rgba(15, 15, 15, 0.4);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* Logo Section - Image Logo with White Circle Background */
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.logo:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.logoMark {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%; /* Changed to circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background: #ffffff; /* White circle background */
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 3px; /* Added padding to ensure white border visibility */
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Match the circle shape */
+  transition: all 0.3s ease;
+}
+
+.logo:hover .logoMark {
+  transform: scale(1.08);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.logo:hover .logoImage {
+  transform: scale(1.05);
+}
+
+.logoWordmark {
+  font-weight: 900;
+  font-size: 20px;
+  color: #1a1a1a;
+  letter-spacing: -0.04em;
+  margin-left: 0.5rem;
+}
+
+/* Dark theme text colors */
+.header.darkTheme .logoWordmark,
+.header.darkTheme .navLink,
+.header.darkTheme .hamburger span {
+  color: #ffffff;
+}
+
+/* Dark theme logo adjustments */
+.header.darkTheme .logoMark {
+  background: #ffffff; /* Keep white background in dark mode for contrast */
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.header.darkTheme .logo:hover .logoMark {
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Navigation Wrapper */
+.navWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Navigation - Black Text, Hover Effect Active When Selected */
+.nav {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  font-weight: 400;
+  font-size: 12px;
+  color: #1a1a1a; /* Black text */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.4rem 0.8rem;
+  letter-spacing: 0.02em;
+  border-radius: 20px;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1.2;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  text-transform:none;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navLink,
+.navLink *,
+.navLink :after,
+.navLink :before,
+.navLink:after,
+.navLink:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.navLink:disabled {
+  cursor: default;
+}
+
+.navLink span {
+  mix-blend-mode: difference;
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.navLink:after,
+.navLink:before {
+  background: linear-gradient(
+    90deg,
+    #000 25%,
+    transparent 0,
+    transparent 50%,
+    #000 0,
+    #000 75%,
+    transparent 0
+  );
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: translateY(var(--progress, -100%));
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.navLink:after {
+  --progress: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 25%,
+    #000 0,
+    #000 50%,
+    transparent 0,
+    transparent 75%,
+    #000 0
+  );
+}
+
+.navLink:hover:after,
+.navLink:hover:before,
+.navLink.active:after,
+.navLink.active:before {
+  --progress: 0; /* Hover effect active for both hover and active states */
+}
+
+.navLink:hover,
+.navLink.active {
+  color: #ffffff; /* White text on both hover and active states */
+}
+
+/* Dark Mode Toggle Button */
+.themeToggle {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  color: #1a1a1a;
+  padding: 0;
+}
+
+.themeToggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.header.darkTheme .themeToggle {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.header.darkTheme .themeToggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.themeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  width: 16px;
+  height: 16px;
+}
+
+.themeToggle:hover .themeIcon {
+  transform: rotate(15deg);
+}
+
+/* CTA Button - Smaller with Special Hover Effect */
+.ctaButton {
+  position: relative;
+  margin: 0;
+  padding: 0.5rem 1.25rem;
+  outline: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: #2d2c2c;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  font-family: inherit;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  min-height: 32px;
+  letter-spacing: 0.02em;
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.ctaButton:hover {
+  animation: sh0 0.5s ease-in-out both;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background-color: black;
+}
+
+@keyframes sh0 {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(7deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-7deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+.ctaButton:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+.ctaButton::before,
+.ctaButton::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  z-index: -1;
+  transform: translate(100%, -25%) translate3d(0, 0, 0);
+}
+
+.ctaButton:hover::before,
+.ctaButton:hover::after {
+  opacity: 0.15;
+  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.ctaButton:hover::before {
+  transform: translate3d(50%, 0, 0) scale(0.9);
+}
+
+.ctaButton:hover::after {
+  transform: translate(50%, 0) scale(1.1);
+}
+
+/* Modern Hamburger Menu - Smaller with Glass Effect */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.hamburger span {
+  display: block;
+  height: 1.5px;
+  width: 16px;
+  background: #1a1a1a;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+  position: absolute;
+}
+
+.hamburger span:nth-child(1) {
+  transform: translateY(-4px);
+}
+
+.hamburger span:nth-child(2) {
+  transform: translateY(0);
+}
+
+.hamburger span:nth-child(3) {
+  transform: translateY(4px);
+}
+
+/* Hamburger Animation - X Mark Style */
+.hamburger.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(0, 0);
+  width: 16px;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(0, 0);
+  width: 16px;
+}
+
+/* Mobile Menu with Refined Glass Effect */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.mobileMenu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.mobileNavLink {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+  color: #1a1a1a;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Dark Mode Toggle */
+.mobileThemeToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  margin-bottom: 1rem;
+  width: auto;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.mobileThemeToggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.header.darkTheme .mobileThemeToggle {
+  color: #ffffff;
+}
+
+.mobileThemeToggle .themeIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Mobile CTA Button with Special Hover Effect */
+.mobileCtaButton {
+  position: relative;
+  background: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  margin-top: 1rem;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.mobileCtaButton:hover {
+  animation: sh0 0.5s ease-in-out both;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.mobileCtaButton:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+.mobileCtaButton::before,
+.mobileCtaButton::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  z-index: -1;
+  transform: translate(100%, -25%) translate3d(0, 0, 0);
+}
+
+.mobileCtaButton:hover::before,
+.mobileCtaButton:hover::after {
+  opacity: 0.15;
+  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.mobileCtaButton:hover::before {
+  transform: translate3d(50%, 0, 0) scale(0.9);
+}
+
+.mobileCtaButton:hover::after {
+  transform: translate(50%, 0) scale(1.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header {
+    height: 60px;
+    background: rgba(255, 255, 255, 0.06);
+    top: 15px; /* Less space on mobile */
+    margin: 0 15px;
+    width: calc(100% - 30px);
+  }
+  
+  .header.scrolled {
+    height: 56px;
+    background: rgba(255, 255, 255, 0.08);
+    top: 10px; /* Even less space when scrolled on mobile */
+    margin: 0 15px;
+    width: calc(100% - 30px);
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .navWrapper {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .logoWordmark {
+    display: none;
+  }
+  
+  .logoMark {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .mobileNavLink {
+    font-size: 0.875rem;
+  }
+  
+  .mobileCtaButton {
+    font-size: 0.75rem;
+    padding: 0.5rem 1.25rem;
+    margin-top: 1.5rem;
+  }
+  
+  .themeToggle {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .themeIcon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  .logoMark {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .hamburger {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .hamburger span {
+    width: 14px;
+  }
+  
+  .hamburger.active span:nth-child(1),
+  .hamburger.active span:nth-child(3) {
+    width: 14px;
+  }
+  
+  .mobileThemeToggle {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .header {
+    height: 56px;
+    background: rgba(255, 255, 255, 0.05);
+    top: 10px;
+    margin: 0 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .header.scrolled {
+    height: 52px;
+    background: rgba(255, 255, 255, 0.07);
+    top: 8px;
+    margin: 0 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .mobileNavLink {
+    font-size: 0.8125rem;
+  }
+  
+  .mobileCtaButton {
+    font-size: 0.6875rem;
+  }
+  
+  .mobileThemeToggle {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    min-width: 120px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .logo,
+  .navLink,
+  .ctaButton,
+  .hamburger,
+  .hamburger span,
+  .mobileMenu,
+  .mobileNavLink,
+  .mobileCtaButton,
+  .themeToggle,
+  .themeIcon {
+    transition: none;
+  }
+  
+  .ctaButton:hover,
+  .mobileCtaButton:hover,
+  .ctaButton:hover span,
+  .mobileCtaButton:hover span {
+    animation: none;
+  }
+  
+  .navLink:after,
+  .navLink:before {
+    transition: none;
+  }
+  
+  .themeToggle:hover .themeIcon {
+    transform: none;
+  }
+  
+  .mobileThemeToggle:hover {
+    transform: none;
+  }
+  
+  .logo:hover .logoMark,
+  .logo:hover .logoImage {
+    transform: none;
+  }
+}
+
+/* Dark theme adjustments for mobile menu */
+.header.darkTheme .mobileMenu {
+  background: rgba(15, 15, 15, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header.darkTheme .mobileNavLink {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header.darkTheme .mobileNavLink:hover,
+.header.darkTheme .mobileNavLink.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Focus styles for accessibility */
+.themeToggle:focus-visible,
+.mobileThemeToggle:focus-visible,
+.ctaButton:focus-visible,
+.mobileCtaButton:focus-visible,
+.hamburger:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+
+.header.darkTheme .themeToggle:focus-visible,
+.header.darkTheme .mobileThemeToggle:focus-visible {
+  outline: 2px solid #ffffff;
+}

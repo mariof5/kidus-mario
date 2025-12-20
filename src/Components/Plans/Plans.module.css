@@ -1,0 +1,657 @@
+.containerWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0px;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 64px;
+  column-gap: 64px;
+  width: 800px;
+  display: flex;
+  position: relative;
+  overflow-x: visible;
+  overflow-y: visible;
+  margin-top: 35px;
+  margin-bottom: 100px;
+  background-color: #FFFFFF;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  line-height: normal;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Dark Mode Container */
+[data-theme="dark"] .container {
+  background-color: #0A0A0A;
+  color: rgb(255, 255, 255);
+}
+
+.header {
+  z-index: 1;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  row-gap: 16px;
+  column-gap: 16px;
+  width: 792px;
+  height: 68px;
+  display: flex;
+  position: relative;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding: 0px;
+}
+
+.titleContainer {
+  position: relative;
+  outline-color: rgb(0, 0, 0);
+  outline-style: none;
+  outline-width: 0px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  display: flex;
+  white-space-collapse: preserve;
+  text-wrap-mode: wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  flex-grow: 0;
+  flex-basis: auto;
+  width: 792px;
+  height: 68px;
+  transform: none;
+}
+
+.mainTitle {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Cal Sans', 'Cal Sans Placeholder', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: rgb(19, 19, 19);
+  font-size: 59px;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  text-decoration-skip-ink: auto;
+  text-underline-offset: auto;
+  line-height: 1.1;
+  text-align: center;
+  -webkit-text-stroke-width: 0px;
+  -webkit-text-stroke-color: rgb(19, 19, 19);
+  font-feature-settings: "blwf", "cv03", "cv04", "cv09", "cv11";
+  text-wrap-mode: wrap;
+  text-wrap-style: auto;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+/* Dark Mode Main Title */
+[data-theme="dark"] .mainTitle {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+}
+
+.plansContainer {
+  z-index: 1;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 24px;
+  column-gap: 24px;
+  width: 792px;
+  height: 678px;
+  display: flex;
+  position: sticky;
+  top: 50px;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding: 0px;
+}
+
+.planWrapper {
+  z-index: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  width: 792px;
+  position: sticky;
+  top: 50px;
+}
+
+.card {
+  will-change: auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  row-gap: 48px;
+  column-gap: 48px;
+  width: 792px;
+  height: 305px;
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: rgb(240, 240, 240);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+/* Dark Mode Card */
+[data-theme="dark"] .card {
+  background-color: rgb(30, 30, 30);
+}
+
+.premiumCard {
+  will-change: auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  row-gap: 48px;
+  column-gap: 48px;
+  width: 792px;
+  height: 349px;
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 24px;
+}
+
+.backgroundImg {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: block;
+  width: 792px;
+  height: 349px;
+  object-position: 50% 50%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.planContent {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  row-gap: 116px;
+  column-gap: 116px;
+  width: 340px;
+  height: 241px;
+  display: flex;
+  position: relative;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding: 0px;
+}
+
+.planHeader {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 28px;
+  column-gap: 28px;
+  width: 340px;
+  height: 88px;
+  display: flex;
+  position: relative;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding: 0px;
+}
+
+.title {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Cal Sans', 'Cal Sans Placeholder', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  text-decoration-skip-ink: auto;
+  text-underline-offset: auto;
+  line-height: 1.2;
+  text-align: start;
+  -webkit-text-stroke-width: 0px;
+  font-feature-settings: "blwf", "cv03", "cv04", "cv09", "cv11";
+  font-variation-settings: normal;
+  text-wrap-mode: wrap;
+  text-wrap-style: auto;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+  color: rgb(19, 19, 19);
+  -webkit-text-stroke-color: rgb(19, 19, 19);
+}
+
+/* Dark Mode Title */
+[data-theme="dark"] .title {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+}
+
+.premiumTitle {
+  composes: title;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+}
+
+.description {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  text-decoration-skip-ink: auto;
+  text-underline-offset: auto;
+  line-height: 1.5;
+  text-align: start;
+  -webkit-text-stroke-width: 0px;
+  font-feature-settings: "blwf", "cv03", "cv04", "cv09", "cv11";
+  font-variation-settings: normal;
+  text-wrap-style: auto;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+  color: rgb(92, 92, 92);
+  -webkit-text-stroke-color: rgb(92, 92, 92);
+  text-wrap-mode: wrap;
+}
+
+/* Dark Mode Description */
+[data-theme="dark"] .description {
+  color: rgba(255, 255, 255, 0.7);
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.7);
+}
+
+.premiumDescription {
+  composes: description;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+
+.deliveryInfo {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  row-gap: 16px;
+  column-gap: 16px;
+  width: 340px;
+  height: 37px;
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0px;
+}
+
+.deliveryRow {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 340px;
+  height: 20px;
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0px;
+}
+
+.deliveryLabel {
+  composes: description;
+  text-wrap-mode: nowrap;
+  width: 89.1406px;
+  font-weight: 500;
+  color: rgb(60, 60, 60);
+}
+
+/* Dark Mode Delivery Label */
+[data-theme="dark"] .deliveryLabel {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.deliveryTime {
+  composes: description;
+  text-wrap-mode: nowrap;
+  width: 65.4844px;
+  font-weight: 500;
+  color: rgb(40, 40, 40);
+}
+
+/* Dark Mode Delivery Time */
+[data-theme="dark"] .deliveryTime {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.premiumText {
+  composes: description;
+  color: rgba(255, 255, 255, 0.9);
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.9);
+  text-wrap-mode: nowrap;
+  font-weight: 500;
+}
+
+.divider {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  width: 340px;
+  height: 1px;
+  max-height: 1px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Divider */
+[data-theme="dark"] .divider {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.premiumDivider {
+  composes: divider;
+  background-color: rgba(255, 255, 255, 0.3);
+  max-height: none;
+}
+
+.planFeatures {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0px;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 28px;
+  column-gap: 28px;
+  width: 340px;
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0px;
+}
+
+.featuresList {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 16px;
+  column-gap: 16px;
+  width: 340px;
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0px;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-height: 20px;
+}
+
+.featureIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(19, 19, 19, 0.08);
+  border-radius: 50px;
+  flex-shrink: 0;
+  color: rgb(19, 19, 19);
+}
+
+/* Dark Mode Feature Icon */
+[data-theme="dark"] .featureIcon {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255);
+}
+
+.premiumCard .featureIcon {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgb(255, 255, 255);
+}
+
+.featureText {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  color: rgb(19, 19, 19);
+  text-wrap-mode: wrap;
+  margin: 0;
+  flex: 1;
+}
+
+/* Dark Mode Feature Text */
+[data-theme="dark"] .featureText {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.premiumCard .featureText {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+}
+
+.ctaContainer {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  width: 340px;
+  height: 44px;
+  position: relative;
+}
+
+.ctaButton {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  cursor: pointer;
+  will-change: auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  row-gap: 8px;
+  column-gap: 8px;
+  width: 340px;
+  height: 44px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: rgba(12, 12, 12, 0.92);
+  opacity: 1;
+  border-radius: 50px;
+  padding: 12px 0px 12px 0px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.ctaButton:hover {
+  background-color: rgba(12, 12, 12, 1);
+  transform: translateY(-1px);
+}
+
+/* Dark Mode CTA Button */
+[data-theme="dark"] .ctaButton {
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+[data-theme="dark"] .ctaButton:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.buttonBackground {
+  will-change: auto;
+  z-index: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  row-gap: 0px;
+  column-gap: 0px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: rgba(255, 255, 255, 0.16);
+  border-radius: 50px;
+}
+
+/* Dark Mode Button Background */
+[data-theme="dark"] .buttonBackground {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+
+.buttonText {
+  composes: description;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  text-wrap-mode: nowrap;
+  width: 72.2188px;
+  height: 20px;
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Dark Mode Button Text */
+[data-theme="dark"] .buttonText {
+  color: rgb(19, 19, 19);
+  -webkit-text-stroke-color: rgb(19, 19, 19);
+}
+
+/* =========================================================
+   RESPONSIVE — Mobile & Tablet without affecting Desktop
+   ========================================================= */
+
+/* Tablet Size */
+@media (max-width: 1024px) {
+  .container {
+    
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+}
+
+/* Small Tablets / Large Phones */
+@media (max-width: 768px) {
+  .container {
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 580px) {
+  .container {
+    transform: scale(0.6);
+    transform-origin: top center;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .container {
+    transform: scale(0.5);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    margin-bottom: -600px;
+    transform: scale(0.4);
+    transform-origin: top center;
+  }
+}

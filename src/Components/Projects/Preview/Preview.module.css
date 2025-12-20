@@ -1,0 +1,709 @@
+/* ------------------------------------------------
+   PREVIEW CONTAINER
+--------------------------------------------------- */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .container {
+  background: #0a0a0a;
+}
+
+.mainContent {
+  align-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+  width: 100%;
+  will-change: transform;
+  transform: none;
+  padding: 60px 0px 0px 0px;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  line-height: normal;
+  font-family: sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .mainContent {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1120px;
+  width: 100%;
+  padding: 0px 2rem;
+  gap: 80px;
+}
+
+/* ------------------------------------------------
+   HEADER SECTION
+--------------------------------------------------- */
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 60px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-family: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif';
+  font-style: normal;
+  font-weight: 500;
+  color: rgb(17, 17, 17);
+  font-size: clamp(2rem, 5vw, 40px);
+  letter-spacing: -1.2px;
+  text-transform: none;
+  line-height: 1.1;
+  text-align: start;
+  margin: 0px;
+  text-decoration: none;
+}
+
+[data-theme="dark"] .title {
+  color: #ffffff;
+}
+
+/* ------------------------------------------------
+   DETAILS SECTION
+--------------------------------------------------- */
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 32px;
+}
+
+.detailRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 120px;
+  align-items: flex-start;
+}
+
+.detailLabel {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.labelText {
+  font-family: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif';
+  font-weight: 400;
+  color: rgb(108, 113, 121);
+  font-size: clamp(1rem, 2.5vw, 20px);
+  letter-spacing: -0.6px;
+  line-height: 1.3;
+  text-wrap-mode: nowrap;
+  margin: 0;
+}
+
+[data-theme="dark"] .labelText {
+  color: #a0a0a0;
+}
+
+.detailContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.contentText {
+  font-family: 'Inter, sans-serif';
+  font-weight: 400;
+  color: rgb(92, 92, 92);
+  font-size: clamp(0.875rem, 1.5vw, 16px);
+  letter-spacing: -0.16px;
+  line-height: 1.5;
+  text-wrap-mode: wrap;
+  margin: 0;
+}
+
+[data-theme="dark"] .contentText {
+  color: #b0b0b0;
+}
+
+/* ------------------------------------------------
+   CATEGORIES SECTION
+--------------------------------------------------- */
+.categoriesContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  height: auto;
+  flex-wrap: wrap;
+}
+
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryText {
+  font-family: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif';
+  font-weight: 400;
+  color: rgb(17, 17, 17);
+  font-size: clamp(1rem, 2.5vw, 20px);
+  letter-spacing: -0.6px;
+  line-height: 1.3;
+  text-wrap-mode: nowrap;
+  margin: 0;
+}
+
+[data-theme="dark"] .categoryText {
+  color: #ffffff;
+}
+
+.categoryDivider {
+  aspect-ratio: 1 / 1;
+  background-color: rgb(209, 211, 214);
+  height: 4px;
+  width: 4px;
+  border-radius: 100px;
+}
+
+[data-theme="dark"] .categoryDivider {
+  background-color: #666;
+}
+
+/* ------------------------------------------------
+   BUTTON SECTION
+--------------------------------------------------- */
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: auto;
+  padding: 12px 0px 0px 0px;
+}
+
+.buttonWrapper {
+  height: auto;
+}
+
+.previewButton {
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: rgb(17, 17, 17);
+  box-shadow: rgba(0, 0, 0, 0.05) 0.474223px 0.474223px 0.670652px -0.2px, rgba(0, 0, 0, 0.06) 1.29143px 1.29143px 1.82636px -0.4px, rgba(0, 0, 0, 0.08) 2.83552px 2.83552px 4.01004px -0.6px, rgba(0, 0, 0, 0.11) 6.29421px 6.29421px 8.90136px -0.8px, rgba(0, 0, 0, 0.2) 16px 16px 22.6274px -1px;
+  border-radius: 16px;
+  padding: 12px 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  color: white;
+  width: auto;
+  min-width: 140px;
+}
+
+.previewButton:hover {
+  background-color: rgb(34, 34, 34);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .previewButton {
+  background-color: #333;
+}
+
+[data-theme="dark"] .previewButton:hover {
+  background-color: #444;
+}
+
+.buttonTextContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonText {
+  font-family: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif';
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  font-size: clamp(0.875rem, 1.5vw, 16px);
+  letter-spacing: -0.48px;
+  line-height: 1.3;
+  text-wrap-mode: nowrap;
+  margin: 0;
+}
+
+.buttonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.externalIcon {
+  width: 20px;
+  height: 20px;
+  color: rgb(255, 255, 255);
+  stroke-width: 2px;
+}
+
+/* ------------------------------------------------
+   IMAGE SECTION
+--------------------------------------------------- */
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.imageContainer {
+  aspect-ratio: 1.55556 / 1;
+  width: 100%;
+  max-width: 1120px;
+  height: auto;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 40px;
+}
+
+.imageInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+}
+
+.previewImage {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-position: 50% 50%;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+/* ------------------------------------------------
+   CLOSE BUTTON
+--------------------------------------------------- */
+.closeButtonContainer {
+  position: fixed;
+  right: 40px;
+  top: 40px;
+  width: 48px;
+  height: 48px;
+  will-change: transform;
+  z-index: 1000;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: rgb(247, 247, 247);
+  box-shadow: rgba(0, 0, 0, 0.13) 0px 0.636953px 0.636953px -0.625px, rgba(0, 0, 0, 0.13) 0px 1.9316px 1.9316px -1.25px, rgba(0, 0, 0, 0.13) 0px 5.10612px 5.10612px -1.875px, rgba(0, 0, 0, 0.13) 0px 16px 16px -2.5px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background-color: rgb(237, 237, 237);
+  transform: scale(1.05);
+}
+
+[data-theme="dark"] .closeButton {
+  background-color: #333;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .closeButton:hover {
+  background-color: #444;
+}
+
+.closeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.closeIconSvg {
+  width: 28px;
+  height: 28px;
+  color: rgb(17, 17, 17);
+  stroke-width: 2.5px;
+}
+
+[data-theme="dark"] .closeIconSvg {
+  color: #ffffff;
+}
+
+/* ------------------------------------------------
+   OTHER PROJECTS SECTION
+--------------------------------------------------- */
+.otherProjectsSection {
+  width: 100%;
+  max-width: 1120px;
+  margin: 80px auto 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.otherProjectsTitle {
+  font-size: clamp(1.5rem, 4vw, 28px);
+  font-weight: 600;
+  color: #111;
+  font-family: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif';
+  margin: 0;
+}
+
+[data-theme="dark"] .otherProjectsTitle {
+  color: #ffffff;
+}
+
+.otherProjectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.otherProjectCard {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.3s ease;
+}
+
+.otherProjectCard:hover {
+  transform: translateY(-5px);
+}
+
+.otherProjectImageWrapper {
+  width: 100%;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f5f5f5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .otherProjectImageWrapper {
+  background: #333;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.otherProjectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.otherProjectCard:hover .otherProjectImage {
+  transform: scale(1.05);
+}
+
+.otherProjectName {
+  font-size: clamp(1rem, 2vw, 18px);
+  font-weight: 500;
+  color: #111;
+  font-family: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif';
+  margin: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .otherProjectName {
+  color: #ffffff;
+}
+
+/* ------------------------------------------------
+   RESPONSIVE DESIGN
+--------------------------------------------------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .contentWrapper {
+    gap: 60px;
+    padding: 0px 1.5rem;
+  }
+  
+  .headerSection {
+    gap: 40px;
+  }
+  
+  .detailRow {
+    gap: 60px;
+  }
+  
+  .otherProjectsSection {
+    margin: 60px auto 80px auto;
+    gap: 30px;
+  }
+  
+  .otherProjectsGrid {
+    gap: 30px;
+  }
+  
+  .otherProjectImageWrapper {
+    height: 220px;
+  }
+}
+
+/* Large Mobile */
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 40px 0px 0px 0px;
+  }
+  
+  .contentWrapper {
+    gap: 40px;
+    padding: 0px 1rem;
+  }
+  
+  .headerSection {
+    gap: 30px;
+  }
+  
+  .detailsSection {
+    gap: 24px;
+  }
+  
+  .detailRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .detailLabel {
+    min-width: auto;
+  }
+  
+  .categoriesContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .categoryDivider {
+    display: none;
+  }
+  
+  .closeButtonContainer {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .closeButton {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .closeIconSvg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .otherProjectsSection {
+    margin: 40px auto 60px auto;
+    gap: 24px;
+  }
+  
+  .otherProjectsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .otherProjectImageWrapper {
+    height: 200px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 20px 0px 0px 0px;
+  }
+  
+  .contentWrapper {
+    gap: 32px;
+    padding: 0px 0.75rem;
+  }
+  
+  .headerSection {
+    gap: 24px;
+  }
+  
+  .detailsSection {
+    gap: 20px;
+  }
+  
+  .previewButton {
+    padding: 10px 20px;
+    min-width: 120px;
+  }
+  
+  .buttonText {
+    font-size: 14px;
+  }
+  
+  .imageWrapper {
+    border-radius: 20px;
+  }
+  
+  .imageInner {
+    border-radius: 20px;
+  }
+  
+  .previewImage {
+    border-radius: 20px;
+  }
+  
+  .closeButtonContainer {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .closeButton {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .closeIconSvg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .otherProjectsSection {
+    margin: 32px auto 48px auto;
+    gap: 20px;
+  }
+  
+  .otherProjectImageWrapper {
+    height: 180px;
+    border-radius: 16px;
+  }
+  
+  .otherProjectCard {
+    gap: 12px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 380px) {
+  .contentWrapper {
+    gap: 24px;
+    padding: 0px 0.5rem;
+  }
+  
+  .headerSection {
+    gap: 20px;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .detailsSection {
+    gap: 16px;
+  }
+  
+  .previewButton {
+    padding: 8px 16px;
+    min-width: 110px;
+  }
+  
+  .otherProjectsSection {
+    margin: 24px auto 40px auto;
+    gap: 16px;
+  }
+  
+  .otherProjectImageWrapper {
+    height: 160px;
+  }
+}
+
+/* ------------------------------------------------
+   ACCESSIBILITY AND PERFORMANCE
+--------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .previewButton,
+  .closeButton,
+  .otherProjectCard,
+  .otherProjectImage {
+    transition: none;
+  }
+  
+  .previewButton:hover,
+  .closeButton:hover,
+  .otherProjectCard:hover {
+    transform: none;
+  }
+  
+  .otherProjectCard:hover .otherProjectImage {
+    transform: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.previewButton:focus-visible,
+.closeButton:focus-visible {
+  outline: 2px solid #0081f2;
+  outline-offset: 2px;
+}
+
+.otherProjectCard:focus-visible {
+  outline: 2px solid #0081f2;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .previewButton:active,
+  .closeButton:active {
+    transform: scale(0.98);
+  }
+  
+  .otherProjectCard:active {
+    transform: translateY(-2px);
+  }
+}

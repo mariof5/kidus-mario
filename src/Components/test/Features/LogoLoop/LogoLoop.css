@@ -1,0 +1,346 @@
+.logoloop {
+  position: relative;
+  padding-top: 10px; /* Added 10px padding to top */
+  --logoloop-gap: 32px;
+  --logoloop-logoHeight: 28px;
+  --logoloop-fadeColor-light: #ffffff;
+  --logoloop-fadeColor-dark: #0b0b0b;
+  --logoloop-fadeColor: var(--logoloop-fadeColor-light);
+}
+
+/* Theme-aware color selection */
+@media (prefers-color-scheme: dark) {
+  .logoloop {
+    --logoloop-fadeColor: var(--logoloop-fadeColor-dark);
+  }
+}
+
+/* Data theme attribute support */
+.logoloop[data-theme="dark"],
+[data-theme="dark"] .logoloop {
+  --logoloop-fadeColor: var(--logoloop-fadeColor-dark);
+}
+
+.logoloop[data-theme="light"],
+[data-theme="light"] .logoloop {
+  --logoloop-fadeColor: var(--logoloop-fadeColor-light);
+}
+
+/* Override with custom colors if provided */
+.logoloop[style*="--logoloop-fadeColorDark"],
+.logoloop[style*="--logoloop-fadeColor"] {
+  --logoloop-fadeColor-dark: var(--logoloop-fadeColorDark, var(--logoloop-fadeColor-dark));
+  --logoloop-fadeColor-light: var(--logoloop-fadeColor, var(--logoloop-fadeColor-light));
+}
+
+.logoloop--vertical {
+  height: 100%;
+  display: inline-block;
+}
+
+.logoloop--scale-hover {
+  padding-top: calc(var(--logoloop-logoHeight) * 0.1 + 10px); /* Added 10px to existing scale-hover padding */
+  padding-bottom: calc(var(--logoloop-logoHeight) * 0.1);
+}
+
+.logoloop__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  user-select: none;
+  position: relative;
+  z-index: 0;
+}
+
+.logoloop--vertical .logoloop__track {
+  flex-direction: column;
+  height: max-content;
+  width: 100%;
+}
+
+.logoloop__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logoloop--vertical .logoloop__list {
+  flex-direction: column;
+}
+
+.logoloop__item {
+  flex: 0 0 auto;
+  margin-right: var(--logoloop-gap);
+  font-size: var(--logoloop-logoHeight);
+  line-height: 1;
+  list-style: none;
+}
+
+.logoloop--vertical .logoloop__item {
+  margin-right: 0;
+  margin-bottom: var(--logoloop-gap);
+}
+
+.logoloop__item:last-child {
+  margin-right: var(--logoloop-gap);
+}
+
+.logoloop--vertical .logoloop__item:last-child {
+  margin-right: 0;
+  margin-bottom: var(--logoloop-gap);
+}
+
+.logoloop__node {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logoloop__item img {
+  height: var(--logoloop-logoHeight);
+  width: auto;
+  display: block;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logoloop--scale-hover .logoloop__item {
+  overflow: visible;
+}
+
+.logoloop--scale-hover .logoloop__item:hover img,
+.logoloop--scale-hover .logoloop__item:hover .logoloop__node {
+  transform: scale(1.2);
+  transform-origin: center center;
+}
+
+.logoloop--scale-hover .logoloop__node {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logoloop__link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.logoloop__link:hover {
+  opacity: 0.8;
+}
+
+.logoloop__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Responsive fade gradients */
+.logoloop--fade::before,
+.logoloop--fade::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Desktop - subtle fade */
+.logoloop--fade::before {
+  left: 0;
+  width: clamp(24px, 5%, 80px);
+  background: linear-gradient(
+    to right,
+    var(--logoloop-fadeColor) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.logoloop--fade::after {
+  right: 0;
+  width: clamp(24px, 5%, 80px);
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    var(--logoloop-fadeColor) 100%
+  );
+}
+
+/* Tablet - slightly stronger fade */
+@media (max-width: 1024px) {
+  .logoloop--fade::before {
+    width: clamp(32px, 8%, 96px);
+    background: linear-gradient(
+      to right,
+      var(--logoloop-fadeColor) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .logoloop--fade::after {
+    width: clamp(32px, 8%, 96px);
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0) 0%,
+      var(--logoloop-fadeColor) 100%
+    );
+  }
+}
+
+/* Mobile - stronger fade */
+@media (max-width: 768px) {
+  .logoloop--fade::before {
+    width: clamp(40px, 10%, 120px);
+    background: linear-gradient(
+      to right,
+      var(--logoloop-fadeColor) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .logoloop--fade::after {
+    width: clamp(40px, 10%, 120px);
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0) 0%,
+      var(--logoloop-fadeColor) 100%
+    );
+  }
+}
+
+/* Small mobile - strongest fade */
+@media (max-width: 480px) {
+  .logoloop--fade::before {
+    width: clamp(48px, 12%, 144px);
+    background: linear-gradient(
+      to right,
+      var(--logoloop-fadeColor) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .logoloop--fade::after {
+    width: clamp(48px, 12%, 144px);
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0) 0%,
+      var(--logoloop-fadeColor) 100%
+    );
+  }
+}
+
+/* Vertical orientation fade gradients */
+.logoloop--vertical.logoloop--fade::before,
+.logoloop--vertical.logoloop--fade::after {
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+/* Desktop vertical */
+.logoloop--vertical.logoloop--fade::before {
+  top: 0;
+  bottom: auto;
+  height: clamp(24px, 5%, 80px);
+  background: linear-gradient(
+    to bottom,
+    var(--logoloop-fadeColor) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.logoloop--vertical.logoloop--fade::after {
+  bottom: 0;
+  top: auto;
+  height: clamp(24px, 5%, 80px);
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0) 0%,
+    var(--logoloop-fadeColor) 100%
+  );
+}
+
+/* Tablet vertical */
+@media (max-width: 1024px) {
+  .logoloop--vertical.logoloop--fade::before {
+    height: clamp(32px, 8%, 96px);
+  }
+  
+  .logoloop--vertical.logoloop--fade::after {
+    height: clamp(32px, 8%, 96px);
+  }
+}
+
+/* Mobile vertical */
+@media (max-width: 768px) {
+  .logoloop--vertical.logoloop--fade::before {
+    height: clamp(40px, 10%, 120px);
+  }
+  
+  .logoloop--vertical.logoloop--fade::after {
+    height: clamp(40px, 10%, 120px);
+  }
+}
+
+/* Small mobile vertical */
+@media (max-width: 480px) {
+  .logoloop--vertical.logoloop--fade::before {
+    height: clamp(48px, 12%, 144px);
+  }
+  
+  .logoloop--vertical.logoloop--fade::after {
+    height: clamp(48px, 12%, 144px);
+  }
+}
+
+/* Dark theme adjustments */
+@media (prefers-color-scheme: dark) {
+  .logoloop--fade::before {
+    background: linear-gradient(
+      to right,
+      var(--logoloop-fadeColor) 0%,
+      rgba(11, 11, 11, 0) 100%
+    );
+  }
+  
+  .logoloop--fade::after {
+    background: linear-gradient(
+      to left,
+      rgba(11, 11, 11, 0) 0%,
+      var(--logoloop-fadeColor) 100%
+    );
+  }
+  
+  .logoloop--vertical.logoloop--fade::before {
+    background: linear-gradient(
+      to bottom,
+      var(--logoloop-fadeColor) 0%,
+      rgba(11, 11, 11, 0) 100%
+    );
+  }
+  
+  .logoloop--vertical.logoloop--fade::after {
+    background: linear-gradient(
+      to top,
+      rgba(11, 11, 11, 0) 0%,
+      var(--logoloop-fadeColor) 100%
+    );
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .logoloop__track {
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  .logoloop__item img,
+  .logoloop__node {
+    transition: none !important;
+  }
+}

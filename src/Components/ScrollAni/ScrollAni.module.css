@@ -1,0 +1,439 @@
+/* About Section Styles */
+.aboutSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem 2rem 2rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.aboutHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.aboutTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  margin-top: 3rem;
+  text-align: center;
+  background: linear-gradient(180deg, #000000 0%, #c5c5c5 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.aboutTitleDark {
+  background: linear-gradient(135deg, #f6f6f6 0%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aboutDivider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #000000 0%, #d8d8d8 80%);
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+[data-theme="dark"] .aboutDivider {
+  background: linear-gradient(135deg, #efefef 0%, #000000 100%);
+}
+
+/* MagicText Component Styles */
+.magicTextSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.magicTextContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  line-height: 0.8;
+  padding: 2rem;
+  max-width: 1300px;
+  gap: 0.5rem;
+}
+
+.wordContainer {
+  position: relative;
+  margin-top: 12px;
+  margin-right: 8px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+  color: #333;
+}
+
+[data-theme="dark"] .wordContainer {
+  color: #fff;
+}
+
+.wordShadow {
+  position: absolute;
+  opacity: 0.2;
+}
+
+.wordMain {
+  position: relative;
+}
+
+/* Original Styles */
+.heroScrollDemo {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 50px;
+  margin-top: -50px;
+  padding-top: 100px;
+  background: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.heroScrollDemoDark {
+  background: transparent;
+}
+
+.containerScroll {
+  height: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.containerScrollDark {
+  /* Dark mode specific styles if needed */
+}
+
+@media (min-width: 768px) {
+  .containerScroll {
+    height: 80rem;
+    padding: 5rem;
+  }
+}
+
+.scrollContainer {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .scrollContainer {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
+
+.contentWrapper {
+  perspective: 1000px;
+  width: 100%;
+}
+
+.header {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -80px;
+  text-align: center;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+  transition: color 0.3s ease;
+  background: linear-gradient(to top, rgba(174, 174, 174, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.titleDark {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+.titleLarge {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  display: block;
+  line-height: 1;
+  transition: color 0.3s ease;
+  background: linear-gradient(to top, rgba(228, 228, 228, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.titleLargeDark {
+  background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (min-width: 768px) {
+  .titleLarge {
+    font-size: 6rem;
+  }
+}
+
+/* Larger Card Size */
+.card {
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -3rem;
+  height: 35rem;
+  width: 100%;
+  border-width: 4px;
+  border-color: #6C6C6C;
+  padding: 0.5rem;
+  background-color: #222222;
+  border-radius: 30px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out, background-color 0.3s ease;
+  will-change: transform;
+}
+
+.cardDark {
+  background-color: #333333;
+  border-color: #555555;
+}
+
+@media (min-width: 768px) {
+  .card {
+    height: 45rem;
+    margin-top: -3rem;
+    padding: 1.5rem;
+  }
+}
+
+.cardContent {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: #424242;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.cardContentDark {
+  background-color: #3e3e3e;
+}
+
+@media (min-width: 768px) {
+  .cardContent {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+}
+
+.cardContent.mobileCard {
+  padding: 0.5rem;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 0.75rem;
+  display: block;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  transition: all 0.3s ease;
+  transform: scale(1.05);
+}
+
+.heroImage:hover {
+  transform: scale(1.08);
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper stacking context */
+.containerScroll {
+  isolation: isolate;
+}
+
+/* Performance optimizations */
+.card, .header {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 6rem 1rem 1rem 1rem;
+  }
+
+  .aboutHeader {
+    margin-bottom: 2rem;
+  }
+
+  .aboutTitle {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .magicTextSection {
+    padding: 1rem 0;
+  }
+
+  .magicTextContainer {
+    padding: 0.5rem;
+  }
+
+  .wordContainer {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    margin-right: 6px;
+  }
+
+  .heroScrollDemo {
+    padding-bottom: 20px;
+  }
+  
+  .containerScroll {
+    height: 50rem;
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.875rem;
+  }
+  
+  .titleLarge {
+    font-size: 3rem;
+  }
+  
+  .card {
+    height: 28rem;
+    margin-top: -2rem;
+    max-width: 95%;
+  }
+  
+  .heroImage {
+    object-fit: cover;
+    transform: scale(1.02);
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 4rem 1rem 1rem 1rem;
+  }
+
+  .aboutTitle {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .magicTextSection {
+    padding: 0.5rem 0;
+  }
+
+  .wordContainer {
+    font-size: clamp(1rem, 4vw, 1.8rem);
+    margin-right: 4px;
+  }
+
+  .containerScroll {
+    height: 45rem;
+    padding: 0.5rem;
+  }
+  
+  .card {
+    height: 25rem;
+    margin-top: -1.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .titleLarge {
+    font-size: 2.5rem;
+  }
+  
+  .heroImage {
+    transform: scale(1.01);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .card, .header {
+    transition: none;
+    transform: none !important;
+  }
+  
+  .heroImage:hover {
+    transform: scale(1.05) !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Loading state */
+.imageContainer.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
