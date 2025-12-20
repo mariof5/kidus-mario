@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Plans.module.css';
-import imgplans from '/public/Plans/Plans.png';
-import { 
+import imgplans from '/Plans/plans.png';
+import {
   FiCheck
 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
@@ -15,17 +15,17 @@ const PlanFeature = ({ text }) => (
   </div>
 );
 
-const PlanCard = ({ 
-  title, 
-  description, 
-  deliveryTime, 
-  features, 
+const PlanCard = ({
+  title,
+  description,
+  deliveryTime,
+  features,
   price,
   isPremium = false,
-  backgroundImage 
+  backgroundImage
 }) => {
   const cardClass = isPremium ? styles.premiumCard : styles.card;
-  
+
   return (
     <div className={cardClass}>
       {isPremium && backgroundImage && (
@@ -39,7 +39,7 @@ const PlanCard = ({
           />
         </div>
       )}
-      
+
       <div className={styles.planContent}>
         <div className={styles.planHeader}>
           <h6 className={isPremium ? styles.premiumTitle : styles.title}>
@@ -49,7 +49,7 @@ const PlanCard = ({
             {description}
           </p>
         </div>
-        
+
         <div className={styles.deliveryInfo}>
           <div className={styles.deliveryRow}>
             <p className={isPremium ? styles.premiumText : styles.deliveryLabel}>
@@ -62,10 +62,10 @@ const PlanCard = ({
           <div className={isPremium ? styles.premiumDivider : styles.divider}></div>
         </div>
       </div>
-      
+
       <div className={styles.planFeatures}>
         <div className={isPremium ? styles.premiumDivider : styles.divider}></div>
-        
+
         <div className={styles.featuresList}>
           {features.map((feature, index) => (
             <PlanFeature
@@ -74,7 +74,7 @@ const PlanCard = ({
             />
           ))}
         </div>
-        
+
         <div className={styles.ctaContainer}>
           <Link to="/contact" className={styles.ctaButton}>
             <div className={styles.buttonBackground}></div>
@@ -102,41 +102,41 @@ export const Plans = () => {
     { text: "Dedicated support until launch" }
   ];
 
-const backgroundImage = imgplans;
+  const backgroundImage = imgplans;
 
   return (
     <div className={styles.containerWrapper}>
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.titleContainer}>
-          <h2 className={styles.mainTitle}>Founder's Offer</h2>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <div className={styles.titleContainer}>
+            <h2 className={styles.mainTitle}>Founder's Offer</h2>
+          </div>
+        </div>
+
+        <div className={styles.plansContainer}>
+          <div className={styles.planWrapper}>
+            <PlanCard
+              title="Starter Website Plan"
+              description="Perfect for small business owners or personal branding starting fresh."
+              deliveryTime="1-2 weeks"
+              features={starterFeatures}
+              price="$500"
+            />
+          </div>
+
+          <div className={styles.planWrapper}>
+            <PlanCard
+              title="Premium Website Plan"
+              description="Ideal for business that need a polished, scalable online presence."
+              deliveryTime="2-3 weeks"
+              features={premiumFeatures}
+              price="$1000"
+              isPremium={true}
+              backgroundImage={backgroundImage}
+            />
+          </div>
         </div>
       </div>
-      
-      <div className={styles.plansContainer}>
-        <div className={styles.planWrapper}>
-          <PlanCard
-            title="Starter Website Plan"
-            description="Perfect for small business owners or personal branding starting fresh."
-            deliveryTime="1-2 weeks"
-            features={starterFeatures}
-            price="$500"
-          />
-        </div>
-        
-        <div className={styles.planWrapper}>
-          <PlanCard
-            title="Premium Website Plan"
-            description="Ideal for business that need a polished, scalable online presence."
-            deliveryTime="2-3 weeks"
-            features={premiumFeatures}
-            price="$1000"
-            isPremium={true}
-            backgroundImage={backgroundImage}
-          />
-        </div>
-      </div>
-    </div>
     </div>
   );
 };

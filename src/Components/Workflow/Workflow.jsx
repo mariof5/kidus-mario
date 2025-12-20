@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Workflow.module.css';
-import chain from '/public/Workflow/ChainRm.png';
+import chain from '/Workflow/ChainRm.png';
 
 const WorkflowStep = ({ number, title, description, isActive, onClick }) => {
   const stepRef = useRef(null);
@@ -11,21 +11,21 @@ const WorkflowStep = ({ number, title, description, isActive, onClick }) => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (stepRef.current) {
         const rect = stepRef.current.getBoundingClientRect();
         const isInViewport = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
-        
+
         // Only animate when scrolling DOWN and element is in viewport
         if (currentScrollY > lastScrollY && isInViewport) {
           setIsVisible(true);
-        } 
+        }
         // Reset visibility when scrolling UP and element leaves viewport
         else if (currentScrollY < lastScrollY && !isInViewport) {
           setIsVisible(false);
         }
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -47,12 +47,12 @@ const WorkflowStep = ({ number, title, description, isActive, onClick }) => {
       <div className={styles.stepContent}>
         <div className={styles.stepNumberSection}>
           <div className={styles.stepNumberWrapper}>
-            <div 
-              className={styles.stepNumberClickable} 
-              onClick={onClick} 
+            <div
+              className={styles.stepNumberClickable}
+              onClick={onClick}
               tabIndex="0"
             >
-              <div 
+              <div
                 className={`${styles.stepNumber} ${isActive ? styles.active : styles.inactive}`}
                 style={{
                   transform: isVisible ? 'scale(1)' : 'scale(0.3)',
@@ -69,7 +69,7 @@ const WorkflowStep = ({ number, title, description, isActive, onClick }) => {
           )}
         </div>
         <div className={styles.stepInfo}>
-          <div 
+          <div
             className={styles.stepCard}
             style={{
               transform: isVisible ? 'scale(1) translateY(0)' : 'scale(0.8) translateY(40px)',
@@ -105,7 +105,7 @@ export default function WorkflowSection() {
   const titleRef = useRef(null);
   const [titleVisible, setTitleVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  
+
   const steps = [
     {
       number: "1",
@@ -132,21 +132,21 @@ export default function WorkflowSection() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (titleRef.current) {
         const rect = titleRef.current.getBoundingClientRect();
         const isInViewport = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
-        
+
         // Only animate when scrolling DOWN and element is in viewport
         if (currentScrollY > lastScrollY && isInViewport) {
           setTitleVisible(true);
-        } 
+        }
         // Reset visibility when scrolling UP and element leaves viewport
         else if (currentScrollY < lastScrollY && !isInViewport) {
           setTitleVisible(false);
         }
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -170,9 +170,9 @@ export default function WorkflowSection() {
           <div className={styles.titleSection} ref={titleRef}>
             <div className={styles.titleContainer}>
               <div className={styles.titleMask}>
-                <div 
+                <div
                   className={styles.titleWrapper}
-                
+
                 >
                   <h2 className={styles.mainTitle}>
                     <span className={styles.titleGradient}>
@@ -183,22 +183,22 @@ export default function WorkflowSection() {
               </div>
             </div>
           </div>
-          
+
           <figure className={styles.decorationImage}>
             <div className={styles.imageContainer}>
-              <img 
-                decoding="auto" 
-                loading="lazy" 
-                width="1080" 
-                height="1080" 
-                sizes="150px" 
+              <img
+                decoding="auto"
+                loading="lazy"
+                width="1080"
+                height="1080"
+                sizes="150px"
                 src={chain}
-                alt="Created by saint" 
+                alt="Created by saint"
                 className={styles.image}
               />
             </div>
           </figure>
-          
+
           <div className={styles.stepsContainer}>
             <div className={styles.stepsList}>
               {steps.map((step, index) => (
