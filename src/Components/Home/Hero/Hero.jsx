@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { GiHand } from "react-icons/gi";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from './Hero.module.css';
+import { Link } from 'react-router-dom';
 
 const DecryptedText = ({
   text,
@@ -369,12 +370,16 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className={styles.ctaSection}>
+            <Link to="/contact">
             <button className={`${styles.ctaButton} ${styles.ctaPrimary}`}>
               <span>Book a call</span>
             </button>
+            </Link>
+            <Link to="/work">
             <button className={`${styles.ctaButton} ${styles.ctaSecondary}`}>
               View Work
             </button>
+            </Link>
           </div>
 
           {/* Available Badge */}

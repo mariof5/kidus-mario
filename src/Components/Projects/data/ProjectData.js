@@ -1,5 +1,5 @@
 import image1 from "/project/project_1.jpg";
-import image2 from "/project/project_2.jpg";
+import image2 from "/project/project_2.png";
 import image3 from "/project/project_3.jpg";
 import image4 from "/project/project_4.png";
 
@@ -19,19 +19,6 @@ export const PROJECTS = [
   },
   {
     id: 2,
-    title: "UI/UX Design",
-    description: "clean user experience crafted for conversions",
-    src: image2,
-    category: "User Interface & Experience",
-    technologies: "Figma, Sketch, Protopie",
-    year: "2024",
-    liveUrl: "",
-    githubUrl: "#",
-    stat:"LIVE",
-    overview: "Clean user experience crafted for conversions with a focus on intuitive interfaces and seamless interactions. We design digital products that users love and that drive measurable business results through thoughtful UX research and UI design."
-  },
-  {
-    id: 3,
     title: "Web Development",
     description: "modern, fast, responsive website development",
     src: image3,
@@ -42,6 +29,19 @@ export const PROJECTS = [
     githubUrl: "",
     stat:"coming soon",
     overview: "Modern, fast, responsive website development using cutting-edge technologies. We build scalable web applications that perform excellently across all devices and provide exceptional user experiences with clean, maintainable code."
+  },
+  {
+    id: 3,
+    title: "video editing portfolio",
+    description: "clean user experience crafted for conversions",
+    src: image2,
+    category: "Portfolio Development",
+    technologies: "Figma, Sketch, Protopie",
+    year: "2024",
+    liveUrl: "https://kaleb-portfolio-edits.netlify.app/",
+    githubUrl: "#",
+    stat:"LIVE",
+    overview: "Clean user experience crafted for conversions with a focus on intuitive interfaces and seamless interactions. We design digital products that users love and that drive measurable business results through thoughtful UX research and UI design."
   },
   {
     id: 4,
