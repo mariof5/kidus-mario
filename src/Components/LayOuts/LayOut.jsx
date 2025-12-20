@@ -5,16 +5,14 @@ import Footer from '../Footer/Footer'
 
 
 
-function LayOut({children}) {
+function Layout({ children }) {
   return (
-   <>
-       <Header/> 
-        {children}
-      <Footer/>
-    
-        
-  </>
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
   )
 }
 
-export default LayOut
+export default Layout

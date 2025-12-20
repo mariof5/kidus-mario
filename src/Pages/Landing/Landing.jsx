@@ -1,5 +1,5 @@
 import React from 'react'
-import LayOut from '../../Components/Layouts/LayOut'
+import Layout from '../../Components/Layouts/Layout'
 import ScrollAni from '../../Components/ScrollAni/ScrollAni'
 import Hero from '../../Components/Home/Hero/Hero'
 import Plans from '../../Components/Plans/Plans'
@@ -22,7 +22,7 @@ function Landing() {
   
   const allTestimonials = [...sampleTestimonials, ...additionalTestimonials];
   return (
-    <LayOut>
+    <Layout>
       <Hero/>
       <ScrollAni/>
       <Projects mode="grid" />
@@ -35,7 +35,7 @@ function Landing() {
     
 
 
-    </LayOut>
+    </Layout>
   )
 }
 
