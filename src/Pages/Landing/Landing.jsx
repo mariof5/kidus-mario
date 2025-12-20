@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../../Components/Layouts/Layout.jsx'
+import Layout from '../../Components/LayOuts/LayOut.jsx'
 import ScrollAni from '../../Components/ScrollAni/ScrollAni.jsx'
 import Hero from '../../Components/Home/Hero/Hero.jsx'
 import Plans from '../../Components/Plans/Plans.jsx'
