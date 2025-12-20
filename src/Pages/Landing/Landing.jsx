@@ -1,14 +1,14 @@
 import React from 'react'
-import Layout from '../../Components/Layouts/Layout'
-import ScrollAni from '../../Components/ScrollAni/ScrollAni'
-import Hero from '../../Components/Home/Hero/Hero'
-import Plans from '../../Components/Plans/Plans'
-import Projects from '../../Components/Projects/Projects'
-import { Testimonials } from '../../Components/Testimonials/Testimonials'
-import { sampleTestimonials } from '../../Components/Testimonials/data/TestData';
-import WorkflowSection from '../../Components/Workflow/Workflow'
-import Fqas from '../../Components/FQAs/FQAs'
-import CallToAction from '../../Components/CallToAction/CallToAction'
+import Layout from '../../Components/Layouts/Layout.jsx'
+import ScrollAni from '../../Components/ScrollAni/ScrollAni.jsx'
+import Hero from '../../Components/Home/Hero/Hero.jsx'
+import Plans from '../../Components/Plans/Plans.jsx'
+import Projects from '../../Components/Projects/Projects.jsx'
+import { Testimonials } from '../../Components/Testimonials/Testimonials.jsx'
+import { sampleTestimonials } from '../../Components/Testimonials/data/TestData.js';
+import WorkflowSection from '../../Components/Workflow/Workflow.jsx'
+import Fqas from '../../Components/FQAs/FQAs.jsx'
+import CallToAction from '../../Components/CallToAction/CallToAction.jsx'
 
 
 
@@ -16,23 +16,23 @@ import CallToAction from '../../Components/CallToAction/CallToAction'
 
 
 function Landing() {
-   const additionalTestimonials = [
+  const additionalTestimonials = [
     // ... real testimonials from your API
   ];
-  
+
   const allTestimonials = [...sampleTestimonials, ...additionalTestimonials];
   return (
     <Layout>
-      <Hero/>
-      <ScrollAni/>
+      <Hero />
+      <ScrollAni />
       <Projects mode="grid" />
-      <WorkflowSection/>  
-      <Plans/>
-      <Fqas/>   
-      <CallToAction/> 
+      <WorkflowSection />
+      <Plans />
+      <Fqas />
+      <CallToAction />
       {/* <Testimonials testimonials={allTestimonials} /> */}
 
-    
+
 
 
     </Layout>
