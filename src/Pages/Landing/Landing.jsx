@@ -7,7 +7,7 @@ import Projects from '../../Components/Projects/Projects.jsx'
 import { Testimonials } from '../../Components/Testimonials/Testimonials.jsx'
 import { sampleTestimonials } from '../../Components/Testimonials/data/TestData.js';
 import WorkflowSection from '../../Components/Workflow/Workflow.jsx'
-import Fqas from '../../Components/FQAs/FQAs.jsx'
+import Fqas from '../../Components/FQAs/Fqas.jsx'
 import CallToAction from '../../Components/CallToAction/CallToAction.jsx'
 
 
