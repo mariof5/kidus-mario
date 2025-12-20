@@ -21,12 +21,12 @@ const Footer = () => {
             </div>
             <div className={styles.contactValue}>
               <a
-                href="mailto:designer@example.com"
+                href="mailto:mariosaints12@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.contactLink}
               >
-                designer@example.com
+                mariosaints12@gmail.com
               </a>
             </div>
           </div>
@@ -38,12 +38,12 @@ const Footer = () => {
             </div>
             <div className={styles.contactValue}>
               <a
-                href="tel:+1 (555) 123-4567"
+                href="tel:+251940097749"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.contactLink}
               >
-                +1 (555) 123-4567
+                +251 940 097 749
               </a>
             </div>
           </div>
@@ -55,7 +55,7 @@ const Footer = () => {
             </div>
             <div className={styles.socialIcons}>
               <a
-                href="https://t.me/"
+                href="https://t.me/Kidusmario"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
@@ -64,7 +64,7 @@ const Footer = () => {
                 <FaTelegram className={styles.socialIcon} />
               </a>
               <a
-                href="https://linkedin.com/"
+                href="https://www.linkedin.com/in/mario-saint-4064b730a/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
