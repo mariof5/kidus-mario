@@ -210,7 +210,7 @@ const StickyScroll = ({ isDarkMode = false }) => {
                 <h1 className={styles.aboutTitle}>About me</h1>
               </div>
               <div className={styles.aboutDetails}>
-                <h3 className={styles.name}>Duncan Robert</h3>
+                <h3 className={styles.name}>kidus h/mariam mario</h3>
                 <p className={styles.bio}>
                   I'm a full-stack developer specializing in React and modern web technologies,
                   passionate about building scalable, performant applications.
