@@ -1,7 +1,7 @@
-import image1 from "/project/project_1.jpg";
-import image2 from "/project/project_2.png";
-import image3 from "/project/project_3.jpg";
-import image4 from "/project/project_4.png";
+import image1 from "/project/project_1.webp";
+import image2 from "/project/project_2.webp";
+import image3 from "/project/project_3.webp";
+import image4 from "/project/project_4.webp";
 
 export const PROJECTS = [
   {

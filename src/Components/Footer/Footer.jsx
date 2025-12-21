@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaTwitter, FaInstagram, FaLinkedin, FaTelegram } from 'react-icons/fa';
 import styles from './Footer.module.css';
-import backgroundImage from '/Footer/footer_bg.png';
-import Logo from '/Logo/Logo.png';
+import backgroundImage from '/Footer/footer_bg.webp';
+import Logo from '/Logo/Logo_B.webp';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 

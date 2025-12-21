@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Workflow.module.css';
-import chain from '/Workflow/ChainRm.png';
+import chain from '/Workflow/ChainRm.webp';
 
 const WorkflowStep = ({ number, title, description, isActive, onClick }) => {
   const stepRef = useRef(null);

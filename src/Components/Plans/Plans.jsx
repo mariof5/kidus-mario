@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Plans.module.css';
-import imgplans from '/Plans/plans.png';
+import imgplans from '/Plans/plans.webp';
 import {
   FiCheck
 } from 'react-icons/fi';

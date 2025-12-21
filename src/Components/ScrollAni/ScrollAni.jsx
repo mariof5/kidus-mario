@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import styles from './ScrollAni.module.css';
-import project from '/project/project.avif';
+import project from '/project/project.webp';
 
 // MagicText Component
 const MagicText = ({ text }) => {

@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from './Header.module.css';
 
 // Import your logo image
-import logoImage from '../../../public/Logo/Logo.png'; // Update this path
+import logoImage from '/Logo/Logo_B.webp'; // Update this path
 
 // Import icons (you can use react-icons or SVG)
 const MoonIcon = () => (
