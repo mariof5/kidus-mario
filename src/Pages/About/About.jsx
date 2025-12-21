@@ -11,7 +11,7 @@ const About = () => {
 
       <WhoImI />
       <StickyScroll />
-      <Experience />
+      {/* <Experience /> */}
     </Layout>
   )
 }

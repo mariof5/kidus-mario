@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTwitter, FaInstagram, FaLinkedin, FaTelegram } from 'react-icons/fa';
+import { FaWhatsapp , FaInstagram, FaLinkedin, FaTelegram } from 'react-icons/fa';
 import styles from './Footer.module.css';
 import backgroundImage from '/Footer/footer_bg.webp';
 import Logo from '/Logo/Logo_B.webp';
@@ -82,13 +82,13 @@ const Footer = () => {
                 <FaInstagram className={styles.socialIcon} />
               </a>
               <a
-                href="https://x.com/"
+                href="https://wa.me/251940097749"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
-                aria-label="Twitter"
+                aria-label="WhatsApp"
               >
-                <FaTwitter className={styles.socialIcon} />
+                <FaWhatsapp  className={styles.socialIcon} />
               </a>
             </div>
           </div>
