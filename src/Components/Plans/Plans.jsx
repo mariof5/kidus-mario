@@ -88,18 +88,24 @@ const PlanCard = ({
 
 export const Plans = () => {
   const starterFeatures = [
-    { text: "Single page or single multiple page" },
-    { text: "Fully built in Framer or Webflow" },
-    { text: "Mobile friendly and fast loading" },
-    { text: "Basic SEO Setup" }
+    { text: "Single Page React Application with Responsive Design" },
+    { text: "Mobile-First Development Approach" },
+    { text: "Basic SEO Setup & Optimization" },
+    { text: "Performance Optimization & Fast Loading" },
+    { text: "1 Round of Revisions Included" }
   ];
 
   const premiumFeatures = [
-    { text: "Custom multiple page design" },
-    { text: "Built in framer or webflow with animation/interactions" },
-    { text: "Advanced SEO analytics setup" },
-    { text: "Integration (forms, bookings, etc)" },
-    { text: "Dedicated support until launch" }
+    { text: "Multi-Page React/Next.js Application" },
+    { text: "Advanced SEO & Analytics Integration" },
+    { text: "Custom Backend API Development" },
+    { text: "User Authentication System" },
+    { text: "Database Integration (MongoDB/PostgreSQL)" },
+    { text: "3 Rounds of Revisions" },
+    { text: "Performance & Speed Optimization" },
+    { text: "1 Month Post-Launch Support" },
+    { text: "CMS Integration (Optional)" },
+    { text: "Priority Support" }
   ];
 
   const backgroundImage = imgplans;
@@ -109,28 +115,28 @@ export const Plans = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.titleContainer}>
-            <h2 className={styles.mainTitle}>Founder's Offer</h2>
+            <h2 className={styles.mainTitle}>Web Development Services</h2>
           </div>
         </div>
 
         <div className={styles.plansContainer}>
           <div className={styles.planWrapper}>
             <PlanCard
-              title="Starter Website Plan"
-              description="Perfect for small business owners or personal branding starting fresh."
-              deliveryTime="1-2 weeks"
+              title="Starter Development Plan"
+              description="Perfect for MVPs, landing pages, or small businesses getting started with a modern web presence."
+              deliveryTime="2-3 weeks"
               features={starterFeatures}
-              price="$500"
+              price="$1,500"
             />
           </div>
 
           <div className={styles.planWrapper}>
             <PlanCard
-              title="Premium Website Plan"
-              description="Ideal for business that need a polished, scalable online presence."
-              deliveryTime="2-3 weeks"
+              title="Premium Full-Stack Plan"
+              description="Ideal for growing businesses needing complete web applications with backend functionality and advanced features."
+              deliveryTime="4-6 weeks"
               features={premiumFeatures}
-              price="$1000"
+              price="$3,500"
               isPremium={true}
               backgroundImage={backgroundImage}
             />
