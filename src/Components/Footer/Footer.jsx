@@ -129,7 +129,7 @@ const Footer = () => {
               </div>
               <p className={styles.creatorText}>
                 <a
-                  href="https://x.com/ShenDuncan"
+                  href="https://wa.me/251940097749"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.footerLink}
